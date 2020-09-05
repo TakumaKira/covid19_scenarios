@@ -27,5 +27,7 @@ export const resetCaseCounts = action<void>('RESET_CASE_COUNTS')
 export const setScenarioState = action<ScenarioParameters>('SET_STATE_DATA')
 export const addMitigationInterval = action<void>('ADD_MITIGATION_INTERVAL')
 export const removeMitigationInterval = action<UUIDv4>('REMOVE_MITIGATION_INTERVAL')
+export const addMobilityData = action<void>('ADD_MOBILITY_DATA')
+export const removeMobilityData = action<void>('REMOVE_MOBILITY_DATA')
 
 export const setCanRun = action<boolean>('SET_CAN_RUN')

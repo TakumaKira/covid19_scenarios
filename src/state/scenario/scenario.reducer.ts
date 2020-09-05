@@ -1,4 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
+import * as _ from 'lodash'
 import { suggestNextMitigationInterval } from '../../algorithms/utils/suggestNextMitigationInterval'
 import { getCaseCountsData } from '../../io/defaults/getCaseCountsData'
 
@@ -8,7 +9,9 @@ import { CUSTOM_COUNTRY_NAME } from '../../constants'
 
 import {
   addMitigationInterval,
+  addMobilityData,
   removeMitigationInterval,
+  removeMobilityData,
   renameCurrentScenario,
   resetCaseCounts,
   setAgeDistributionData,
@@ -22,6 +25,7 @@ import {
 
 import { getAgeDistributionData } from '../../io/defaults/getAgeDistributionData'
 import { getScenarioData } from '../../io/defaults/getScenarioData'
+import { getMobilityData } from '../../io/defaults/getMobilityData'
 
 import { ScenarioState, defaultScenarioState } from './scenario.state'
 
@@ -124,6 +128,22 @@ export const scenarioReducer = reducerWithInitialState(defaultScenarioState)
       // prettier-ignore
       draft.scenarioData.data.mitigation.mitigationIntervals =
         draft.scenarioData.data.mitigation.mitigationIntervals.filter((interval) => interval.id !== id)
+    }),
+  )
+
+  .withHandling(
+    immerCase(addMobilityData, (draft) => {
+      const mobility = getMobilityData(draft.scenarioData.name)
+      mobility &&
+        draft.scenarioData.data.mitigation.mitigationIntervals.push(...mobility.data.mitigation.mitigationIntervals)
+    }),
+  )
+
+  .withHandling(
+    immerCase(removeMobilityData, (draft) => {
+      // prettier-ignore
+      draft.scenarioData.data.mitigation.mitigationIntervals =
+        draft.scenarioData.data.mitigation.mitigationIntervals.filter((interval) => !_.startsWith(interval.name, 'Mobility'))
     }),
   )
 
