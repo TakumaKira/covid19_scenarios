@@ -6,7 +6,7 @@ import { getenv } from './getenv'
 const WEB_PORT_DEV = getenv('WEB_PORT_DEV', null)
 const WEB_PORT_PROD = getenv('WEB_PORT_PROD', null)
 const devDomain = `http://localhost:${WEB_PORT_DEV}`
-const prodDomain = `http://localhost:${WEB_PORT_PROD}`
+const prodDomain = `http://0.0.0.0:${WEB_PORT_PROD}`
 
 const ENV_VARS = [
   // prettier-ignore
