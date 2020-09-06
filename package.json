@@ -62,6 +62,7 @@
     "cli": "yarn babel-node --extensions \".ts\" src/algorithms/cli.ts"
   },
   "dependencies": {
+    "@babel/node": "7.10.5",
     "@devexpress/dx-core": "2.7.0",
     "@devexpress/dx-grid-core": "2.7.0",
     "@devexpress/dx-react-core": "2.7.0",
@@ -152,7 +153,6 @@
   "devDependencies": {
     "@babel/code-frame": "7.10.4",
     "@babel/core": "7.10.5",
-    "@babel/node": "7.10.5",
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-proposal-decorators": "7.10.5",
     "@babel/plugin-proposal-numeric-separator": "7.10.4",
