@@ -65,7 +65,7 @@ function main() {
   app.use('/_next', expressStaticGzip(nextDir, cacheOneYear))
   app.get('*', expressStaticGzip(buildDir, cacheNone))
 
-  const port = getenv('WEB_PORT_PROD')
+  const port = process.env.PORT || getenv('WEB_PORT_PROD')
   app.listen(port, () => {
     console.info(`Server is listening on port ${port}`)
   })
