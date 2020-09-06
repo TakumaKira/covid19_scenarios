@@ -6,6 +6,7 @@
   "license": "MIT",
   "snyk": true,
   "scripts": {
+    "start": "babel-node --extensions \".ts\" ./tools/server/server.ts",
     "clear": "node ./lib/clear.js",
     "schema:mkdir": "mkdirp 'src/.generated/latest' 'data/generated'",
     "schema:clean": "rimraf 'src/.generated/latest/{*,.*}' 'data/generated/{*,.*}'",
