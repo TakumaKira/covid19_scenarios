@@ -74,6 +74,7 @@
     "animate.css": "4.1.0",
     "autoprefixer": "9.8.5",
     "axios": "0.19.2",
+    "babel-cli": "6.26.0",
     "babel-node": "0.0.1-security",
     "bootstrap": "4.5.0",
     "classnames": "2.2.6",
