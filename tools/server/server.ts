@@ -63,11 +63,7 @@ function main() {
   app.use(allowMethods(['GET', 'HEAD']))
   app.use(history())
   app.use('/_next', expressStaticGzip(nextDir, cacheOneYear))
-  app.get('*', (req, res, next) => {
-    console.log('Handler is working')
-    console.log('res', res)
-    return expressStaticGzip(buildDir, cacheNone)(req, res, next)
-  })
+  app.get('*', expressStaticGzip(buildDir, cacheNone))
 
   const port = process.env.PORT || getenv('WEB_PORT_PROD')
   app.listen(port, () => {
