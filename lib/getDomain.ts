@@ -6,15 +6,15 @@ import { getenv } from './getenv'
 const WEB_PORT_DEV = getenv('WEB_PORT_DEV', null)
 const WEB_PORT_PROD = getenv('WEB_PORT_PROD', null)
 const devDomain = `http://localhost:${WEB_PORT_DEV}`
-const prodDomain = `http://0.0.0.0:${WEB_PORT_PROD}`
+const prodDomain = `http://localhost:${WEB_PORT_PROD}`
 
 const ENV_VARS = [
   // prettier-ignore
-  'VERCEL_URL',
-  'NOW_URL',
-  'ZEIT_URL',
-  'DEPLOY_PRIME_URL',
-  'DEPLOY_URL',
+  // 'VERCEL_URL',
+  // 'NOW_URL',
+  // 'ZEIT_URL',
+  // 'DEPLOY_PRIME_URL',
+  // 'DEPLOY_URL',
   'URL',
 ]
 
