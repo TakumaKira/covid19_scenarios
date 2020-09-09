@@ -92,8 +92,8 @@ export function MitigationTableDisconnected({
       </Row>
       <Row>
         <Col>
-            <p>Google LLC "Google COVID-19 Community Mobility Reports".</p>
-            <p>https://www.google.com/covid19/mobility/</p>
+          <p>Google LLC &quot;Google COVID-19 Community Mobility Reports&quot;.</p>
+          <p>https://www.google.com/covid19/mobility/</p>
         </Col>
       </Row>
     </>
